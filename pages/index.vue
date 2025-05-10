@@ -5,7 +5,7 @@
         <h1 >Mes projets web</h1>
       </div>
       <div class="swiper-container">
-        <swiper-container
+        <Swiper
           :modules="modules"
           :slides-per-view="1"
           :space-between="30"
@@ -14,15 +14,15 @@
           @swiper="onSwiper"
           @slideChange="onSlideChange"
         >
-          <swiper-slide v-for="project in projects" :key="project.id" class="swiper-slide">
+          <SwiperSlide v-for="project in projects" :key="project.id" class="swiper-slide">
             <div class="slide-content">
               <h3>{{ project.nom }}</h3>
               <p>{{ project.description }}</p>
               <p><strong>Technologies :</strong> {{ project.techno }}</p>
               <NuxtLink v-if="project.link" :to="project.link" target="_blank" class="project-link"> Voir le projet </NuxtLink>
             </div>
-        </swiper-slide>
-        </swiper-container>
+        </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   </template>
@@ -30,8 +30,11 @@
   <script setup>
 
   import { ref } from 'vue';
+  import {Swiper, SwiperSlide} from'swiper/vue';
   import { Navigation, Pagination } from 'swiper/modules';
-
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
 const modules = [Navigation, Pagination];
   
   const onSwiper = (swiper) => {
@@ -65,15 +68,14 @@ const modules = [Navigation, Pagination];
       link: "https://github.com/BakiBacci/lumi_design"
     }
   ]);
+  
   </script>
   
   
 
    <style>
 
-@import 'swiper/swiper.min.css';
-  @import 'swiper/modules/pagination/pagination.min.css';
-  @import 'swiper/modules/navigation/navigation.min.css'; 
+
 
 
 h1{

@@ -8,7 +8,8 @@ export default defineNuxtConfig({
   css: ['@/assets/css/font.css'],
   features: {inlineStyles: false},
   app:{
-    baseURL:'/IsaacBatchi/'
+    baseURL:'/Portfolio/',
+    buildAssetsDir: 'assets'
   }
 });
 

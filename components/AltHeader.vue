@@ -3,9 +3,7 @@
       <NuxtLink to="/" class="header-link">
       <h1>Isaac BATCHI</h1>
       </NuxtLink>
-      <nav>
-        <NuxtLink to="/projets" class="header-btn">projets</NuxtLink>
-      </nav>
+      
     </header>
   </template>
   
